@@ -52,28 +52,3 @@ This version doesn't support reverse DNS lookup for now.
 This version doesn't parse the full context of ICMP types/codes only 'time exceeded'.
 This version doesn't have options for interval, interface, mark, MTU, preload, pattern, TOS, send buffer, timestamp, deadline, and explicit hops.
 
-sample output:
-sudo ./myping -c5 1.1.1.1
-Ping 64 bytes to 1.1.1.1...64 bytes from 1.1.1.1: icmp_seq=1 ttl=56 time=7.73989 ms
-Ping 64 bytes to 1.1.1.1...64 bytes from 1.1.1.1: icmp_seq=1 ttl=56 time=0.055107 ms
-Ping 64 bytes to 1.1.1.1...64 bytes from 1.1.1.1: icmp_seq=2 ttl=56 time=0.072499 ms
-Ping 64 bytes to 1.1.1.1...64 bytes from 1.1.1.1: icmp_seq=2 ttl=56 time=0.096553 ms
-Ping 64 bytes to 1.1.1.1...64 bytes from 1.1.1.1: icmp_seq=3 ttl=56 time=0.047938 ms
---- 1.1.1.1 ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 5008.89ms
-rtt min/avg/max/mdev = 0.047938/1.6024/7.73989/3.06879 ms
-
-sudo ./myping -c5 -q www.naver.com
---- www.naver.com ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 5005.6ms
-rtt min/avg/max/mdev = 0.040733/0.974472/4.68451/1.85503 ms
-
-sudo ./myping -c5 -t 10 ipv6.google.com
-from router: icmp_seq=0 (icmp time exceeded) time=149.033 ms
-from router: icmp_seq=0 (icmp time exceeded) time=149.873 ms
-from router: icmp_seq=0 (icmp time exceeded) time=150.384 ms
-from router: icmp_seq=0 (icmp time exceeded) time=149.146 ms
-from router: icmp_seq=0 (icmp time exceeded) time=149.215 ms
---- ipv6.google.com ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 5748.51ms
-rtt min/avg/max/mdev = 149.033/149.53/150.384/0.517581 ms
