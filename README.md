@@ -17,7 +17,8 @@ This is my first socket program.
 So I took reference of several sample ICMP ping examples for C/C++.
 One is written for [winsock](https://tangentsoft.net/wskfaq/examples/rawping.html) and another is supporting only [IPv4](https://www.geeksforgeeks.org/ping-in-c/).
 But they were good enough to understand how to create sockets, set socket options, send packets and receive packets.
-And I aimed at the Linux platform with sudo previlege (or with the right to create sockets).
+Because this program is creating raw socket, need to change the execution file with this commend
+sudo setcap cap_net_raw+ep ./myping
 
 program structure:
 Based on such understanding, I could figure out the program should be put into 6 steps.
